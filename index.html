@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>nodep project</title>
+  <meta name="description" content="Блокирует сайты азартных игр. Для тех, кто решил остановиться.">
+  <link rel="icon" href="icons/icon128.png" type="image/png">
+  <style>
+    @font-face {
+      font-family: "Tovar";
+      src: url("fonts/Tovar.otf") format("opentype");
+      font-display: swap;
+    }
+
+    :root {
+      --black: #000;
+      --white: #fff;
+      --dim: rgba(255, 255, 255, 0.5);
+      --line: rgba(255, 255, 255, 0.7);
+      --font: "Tovar", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      min-height: 100%;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 28px 32px 40px;
+    }
+
+    /* --- header --- */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    /* --- main --- */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 560px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 48px 0 32px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 8vw, 56px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .lead {
+      font-size: clamp(16px, 2.5vw, 18px);
+      line-height: 1.45;
+      color: var(--dim);
+      max-width: 28ch;
+      margin-bottom: 40px;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 320px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px 20px;
+      font-family: var(--font);
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid var(--white);
+      transition: background 0.15s, color 0.15s, opacity 0.15s;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--black);
+    }
+    .btn-primary:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--line);
+    }
+    .btn-ghost:hover:not(.is-disabled) {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn.is-disabled,
+    .btn[aria-disabled="true"] {
+      opacity: 0.35;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .hint {
+      margin-top: 14px;
+      font-size: 12px;
+      color: var(--dim);
+      line-height: 1.4;
+    }
+
+    /* --- footer --- */
+    footer {
+      margin-top: auto;
+      padding-top: 32px;
+      font-size: 12px;
+      color: var(--dim);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+    }
+
+    footer a {
+      color: var(--dim);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    footer a:hover {
+      color: var(--white);
+      border-bottom-color: var(--white);
+    }
+
+    @media (max-width: 520px) {
+      body { padding: 20px 18px 28px; }
+      main { padding-top: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo-mark" src="icons/icon128.png" width="36" height="36" alt="">
+    <a class="logo-text" href="/">nodep project</a>
+  </header>
+
+  <main>
+    <h1>Стоп.<br>Азартным сайтам.</h1>
+    <p class="lead">Блокирует казино, ставки и кейсы. Для тех, кто решил остановиться.</p>
+
+    <div class="actions">
+      <a class="btn btn-primary" id="dl-chrome" href="downloads/nodep-chrome.zip" download="nodep-project-chrome.zip">
+        скачать для браузера
+      </a>
+      <a class="btn btn-ghost is-disabled" id="dl-android" href="#" aria-disabled="true" title="Скоро">
+        скачать на android
+      </a>
+    </div>
+    <p class="hint" id="hint-chrome">
+      Chrome / Edge: открой chrome://extensions → режим разработчика → «загрузить распакованное» из папки расширения.
+    </p>
+  </main>
+
+  <footer>
+    <span>nodep project</span>
+    <a href="privacy.html">конфиденциальность</a>
+  </footer>
+
+  <script>
+    // Когда появится APK — убери is-disabled и поставь href на файл
+    // document.getElementById("dl-android").classList.remove("is-disabled");
+    // document.getElementById("dl-android").href = "downloads/nodep.apk";
+  </script>
+</body>
+</html>

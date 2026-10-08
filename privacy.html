@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Конфиденциальность — nodep project</title>
+  <link rel="icon" href="icons/icon128.png" type="image/png">
+  <style>
+    @font-face {
+      font-family: "Tovar";
+      src: url("fonts/Tovar.otf") format("opentype");
+      font-display: swap;
+    }
+    :root {
+      --black: #000;
+      --white: #fff;
+      --dim: rgba(255, 255, 255, 0.55);
+      --font: "Tovar", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font);
+      padding: 28px 32px 48px;
+      max-width: 640px;
+    }
+    a.logo {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 20px;
+    }
+    h1 {
+      margin: 48px 0 24px;
+      font-size: 28px;
+      font-weight: 400;
+    }
+    p, li {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--dim);
+      margin-bottom: 12px;
+    }
+    ul { padding-left: 1.2em; margin-bottom: 16px; }
+    a { color: var(--white); }
+  </style>
+</head>
+<body>
+  <a class="logo" href="index.html">nodep project</a>
+  <h1>Конфиденциальность</h1>
+  <p>Расширение блокирует сайты азартных игр локально в браузере.</p>
+  <p><strong style="color:#fff">Что обрабатывается</strong></p>
+  <ul>
+    <li>списки доменов с открытых blocklist-источников;</li>
+    <li>при жалобе на сервер уходят только: домен, причина блокировки, баллы, версия расширения.</li>
+  </ul>
+  <p><strong style="color:#fff">Что не собираем</strong></p>
+  <ul>
+    <li>историю браузера, пароли, платежные данные, аккаунт Google.</li>
+  </ul>
+  <p>Ключ ИИ хранится только на сервере проверки, не в расширении.</p>
+  <p><a href="index.html">← на главную</a></p>
+</body>
+</html>
